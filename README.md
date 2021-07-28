@@ -23,3 +23,30 @@ For installing and using AM, simply follow the steps provided below.
 4) Open up Terminal (macOS)/ Command Prompt (Windows)
 5) cd (change directory) into your AM folder. If the Downloads location for your browser is default, it should be `cd Downloads/AM`
 6) Run `python main.py` to run AM.
+
+## How do I add my own Python Project folders to AM?
+There are a couple of ways to easily add your own project folder to AM. You can either just drop your folder under the AM folder or import directly from AM using an `import` command.
+
+###### Before adding your own folder, please read requirements.md to find out what you need to do so that your project can be properly loaded and launched by AM.
+
+### Adding using Drag & Drop
+Simply drag and drop your project folder under the AM folder such that the `main.py` file of AM is at the same level as your project.
+
+An example file structure:
+From:
+```
+Desktop
+    |-->new folder
+ ```
+ 
+ To:
+```
+AM
+  |-->new folder
+  |-->main.py
+```
+
+### Adding using `import` command
+1) Launch up AM
+2) When AM prompts you to `Enter a choice: `, type in `import <path to the new folder>`. For e.g (on macOS computer): `import /Users/myuser/Desktop/new folder`
+
