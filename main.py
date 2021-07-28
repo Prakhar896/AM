@@ -6,9 +6,7 @@ import importlib
 projectFolders = []
 for _, dirnames, _ in os.walk(os.getcwd()):
     for dirname in dirnames:
-        if dirname == '__pycache__':
-            continue
-        elif dirname == '.git':
+        if dirname == '__pycache__' or dirname == '.git' or dirname == 'assets':
             continue
         projectFolders.append(dirname)
     break
@@ -46,6 +44,7 @@ def mainLoop():
     print(' ')
     choice = input('Enter your choice: ')
 
+    # String commands
     if choice == 'exit':
         print('Bye!')
         exit()
@@ -109,7 +108,14 @@ def mainLoop():
             time.sleep(4)
             print('Terminating app for manual restart...')
             exit()
-            
+    
+    # Int choices
+    if not choice.isdigit():
+        print('Please enter a number!')
+        print('Restarting AM...')
+        print(' ')
+        mainLoop()
+        exit()
     elif int(choice) > (len(options) - 1):
         print('Invalid Choice!')
         print('Program failed. Bye!')
@@ -122,7 +128,8 @@ def mainLoop():
             print(' ')
             projectModules[int(choice)].amMainRun()
         except AttributeError:
-            print('Launch Error: Failed to launch application. Please check that the application meets the amMainRun() function requirement.')
+            print('LAUNCH ERROR: Failed to launch application. Please check that the application meets the amMainRun() function requirement.')
+            
     while True:
         appLaunch()
         print(' ')

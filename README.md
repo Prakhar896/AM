@@ -5,11 +5,15 @@ AM is basically a tool to easily manage and run all of your Python projects so y
 
 AM hopes to remove the tediousness by having an easy-to-use interface and such that you can get to your more important stuff easier.
 
+![Home Screen](assets/home_screen.png)
+
 ## How do I install AM?
 For installing and using AM, simply follow the steps provided below.
 
+---
 #### Requirements for installing AM:
 ###### Python 3.9 or higher. Install the latest version of Python [here](https://python.org)
+---
 
 1) Install the latest version of AM [here](https://github.com/Prakhar896/AM/releases)
 2) Extract the contents of the downloaded `AM-1.0` file.
