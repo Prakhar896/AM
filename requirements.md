@@ -10,7 +10,7 @@ AM is written in Python 3.8.8.
 
 The following are the Software Requirements for running AM:
 
-- Windows Version 10 (Build 10240) or later
+- Windows 10 (Build 10240, 2015 release) or later
 - macOS Version 10.14.6 or later
 
 **All other operating systems are not supported.**
