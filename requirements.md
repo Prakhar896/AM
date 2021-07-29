@@ -56,7 +56,7 @@ The router file must also be in the root of the project folder and follow the na
 For example, the router file for the project above would be `myCoffeeMaker.py`. 
 
 **IMPORTANT: The main runtime file that the router file redirects to must NOT be named `main.py`. It can be named anything except for `main.py`.**
-(This is due to is caused by the way the AM Loader has to load the project.)
+(This is due to the way the AM Loader has to load the project.)
 
 Here is a complete example of a project with a router file that will load correctly:
 
