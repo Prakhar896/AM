@@ -17,7 +17,7 @@ The following are the Software Requirements for running AM:
 
 All Software versions require Python version 3.8.8 or later. [Download the latest Python version here.](https://www.python.org/downloads/)
 
-AM can either be run via the command line (Terminal/Command Prompt) or in the Python's IDLE (Integrated Development and Learning Environment).
+AM can either be run via the command line (Terminal/Command Prompt) or in Python's IDLE (Integrated Development and Learning Environment).
 
 ## Project Loading and Setup
 The AM Loader makes the following assumptions when loading a project:
