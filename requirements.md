@@ -7,10 +7,12 @@
 
 ## System Requirements
 AM is written in Python 3.8.8.
+
 The following are the Software Requirements for running AM:
 
-Windows Version 10 (Build 10240) or later
-macOS Version 10.14.6 or later
+- Windows Version 10 (Build 10240) or later
+- macOS Version 10.14.6 or later
+
 **All other operating systems are not supported.**
 
 All Software versions require Python version 3.8.8 or later. [Download the latest Python version here.](https://www.python.org/downloads/)
