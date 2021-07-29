@@ -21,7 +21,7 @@ AM can either be run via the command line (Terminal/Command Prompt) or in the Py
 The AM Loader makes the following assumptions when loading a project:
 1) The project is in the same directory as the `main.py` file of AM.
 2) The projects main runtime file follows the naming requirement of the name of the project folder but the first character to be in lower case. For example, a project folder called `MyCoffeeMaker` project would have the main runtime file of `myCoffeeMaker.py`. The main runtime file must also be in the root of the project folder.
-3) The main runtime file has all its code wrapped in a function called `amMainRun()`. the AM will call this function when the project is chosen to be launched. (If you do not wish to do this, check below for an alternative method to have the AM call the main runtime file.)
+3) The main runtime file has all its code wrapped in a function called `amMainRun()`. the AM will call this function when the project is chosen to be launched. (If you do not wish to do this, check [below for an alternative method](#alternative-to-wrapping-the-main-runtime-file-in-a-function) to have the AM call the main runtime file.)
 
 Failure to meet any of these requirements will result in AM skipping the project and not loading it. If it still loads it, there's a good chance it will throw an error when the project is launched.
 
