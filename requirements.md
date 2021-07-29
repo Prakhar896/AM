@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [System Requirements](#system-requirements)
-2. [Custom Project Loading and Setup](#project-loading-and-setup)]
+2. [Custom Project Loading and Setup](#project-loading-and-setup)
 
 
 ## System Requirements
