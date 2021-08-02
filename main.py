@@ -2,16 +2,25 @@ print('Loading applications...')
 # Import modules and application files
 import sys, subprocess, os, time, shutil
 import importlib
+try:
+    from am_ignore import *
+except:
+    print('WARNING: Failed to import am_ignore file. This might be because the file was deleted. This can result in AM loading folders that should not be loaded.')
+    print(' ')
 
 projectFolders = []
 for _, dirnames, _ in os.walk(os.getcwd()):
     for dirname in dirnames:
-        if dirname == '__pycache__' or dirname == '.git' or dirname == 'assets':
-            continue
+        try:
+            if dirname.startswith('.') or (dirname in ignored_projects):
+                continue
+        except:
+            pass
         projectFolders.append(dirname)
     break
 
 projectModules = []
+count = 0
 for folder in projectFolders:
     sys.path.insert(1, os.path.join(os.getcwd(), folder))
     try:
@@ -19,6 +28,8 @@ for folder in projectFolders:
         projectModules.append(module)
     except:
         print('LOAD ERROR: Could not load application \'{}\'. Please ensure that this application meets load requirements of AM.'.format(folder))
+        projectFolders.pop(count)
+    count += 1
     
 def copytree(src, dst, symlinks=False, ignore=None):
     for item in os.listdir(src):
