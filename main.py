@@ -135,6 +135,7 @@ def mainLoop():
     # Load selected module
     def appLaunch():
 <<<<<<< HEAD
+<<<<<<< HEAD
         # try:
         print('LAUNCH: {}'.format(options[int(choice)]).upper())
         print(' ')
@@ -150,6 +151,14 @@ def mainLoop():
             print('LAUNCH ERROR: Failed to launch application. Please check that the application meets the amMainRun() function requirement.')
             
 >>>>>>> parent of b142a32... Transforming to new loader system...
+=======
+        try:
+            print('LAUNCH: {}'.format(options[int(choice)]).upper())
+            print(' ')
+            router.amMainRun(projectFolders[int(choice)], projectFolders[int(choice)][0].lower() + projectFolders[int(choice)][1::])
+        except AttributeError:
+            print('LAUNCH ERROR: Failed to launch application. This is likely because there was an error in running the AM BootLoader router file.')
+>>>>>>> parent of 3847d7a... Latest version of AM before reverting back to working old one
     while True:
         appLaunch()
         print(' ')
