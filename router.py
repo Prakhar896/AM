@@ -5,5 +5,5 @@ def amMainRun(folderName, fileName):
     try:
         # Execute file
         importlib.import_module(folderName[0].lower() + folderName[1::], package=None)
-    except:
+    except FileNotFoundError:
         print('LOAD ERROR: Could not load application \'{}\'. Please ensure that this application meets load requirements of AM.'.format(folderName))

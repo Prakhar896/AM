@@ -141,12 +141,12 @@ def mainLoop():
     
     # Load selected module
     def appLaunch():
-        try:
-            print('LAUNCH: {}'.format(options[int(choice)]).upper())
-            print(' ')
-            router.amMainRun(projectFolders[int(choice)], projectFolders[int(choice)][0].lower() + projectFolders[int(choice)][1::])
-        except AttributeError:
-            print('LAUNCH ERROR: Failed to launch application. This is likely because there was an error in running the AM BootLoader router file.')
+        # try:
+        print('LAUNCH: {}'.format(options[int(choice)]).upper())
+        print(' ')
+        router.amMainRun(projectFolders[int(choice)], projectFolders[int(choice)][0].lower() + projectFolders[int(choice)][1::])
+        # except AttributeError:
+        #     print('LAUNCH ERROR: Failed to launch application. This is likely because there was an error in running the AM BootLoader router file.')
     while True:
         appLaunch()
         print(' ')
