@@ -2,18 +2,11 @@ print('Loading applications...')
 # Import modules and application files
 import sys, subprocess, os, time, shutil
 import importlib
-
-# Import System AM Loader Files
 try:
     from am_ignore import *
 except:
     print('WARNING: Failed to import am_ignore file. This might be because the file was deleted. This can result in AM loading folders that should not be loaded.')
     print(' ')
-try:
-    import router
-except:
-    print('CRTICIAL ERROR: Failed to import AM BootLoad router.py file. AM cannot be run. Please re-download AM.')
-    exit()
 
 projectFolders = []
 for _, dirnames, _ in os.walk(os.getcwd()):
@@ -26,17 +19,17 @@ for _, dirnames, _ in os.walk(os.getcwd()):
         projectFolders.append(dirname)
     break
 
-# projectModules = []
-# count = 0
-# for folder in projectFolders:
-#     sys.path.insert(1, os.path.join(os.getcwd(), folder))
-#     try:
-#         module = importlib.import_module(folder[0].lower() + folder[1::], package=None)
-#         projectModules.append(module)
-#     except:
-#         print('LOAD ERROR: Could not load application \'{}\'. Please ensure that this application meets load requirements of AM.'.format(folder))
-#         projectFolders.pop(count)
-#     count += 1
+projectModules = []
+count = 0
+for folder in projectFolders:
+    sys.path.insert(1, os.path.join(os.getcwd(), folder))
+    try:
+        module = importlib.import_module(folder[0].lower() + folder[1::], package=None)
+        projectModules.append(module)
+    except:
+        print('LOAD ERROR: Could not load application \'{}\'. Please ensure that this application meets load requirements of AM.'.format(folder))
+        projectFolders.pop(count)
+    count += 1
     
 def copytree(src, dst, symlinks=False, ignore=None):
     for item in os.listdir(src):
@@ -80,7 +73,7 @@ def mainLoop():
             print(' ')
             mainLoop()
             exit()
-        # Import project at a different folder location
+        # Import project at a differnt folder location
         ## Get name of folder
         print(' ')
         print('Preparing to import folder...')
@@ -141,12 +134,22 @@ def mainLoop():
     
     # Load selected module
     def appLaunch():
+<<<<<<< HEAD
         # try:
         print('LAUNCH: {}'.format(options[int(choice)]).upper())
         print(' ')
         router.amMainRun(projectFolders[int(choice)], projectFolders[int(choice)][0].lower() + projectFolders[int(choice)][1::])
         # except AttributeError:
         #     print('LAUNCH ERROR: Failed to launch application. This is likely because there was an error in running the AM BootLoader router file.')
+=======
+        try:
+            print('LAUNCH: {}'.format(options[int(choice)]).upper())
+            print(' ')
+            projectModules[int(choice)].amMainRun()
+        except AttributeError:
+            print('LAUNCH ERROR: Failed to launch application. Please check that the application meets the amMainRun() function requirement.')
+            
+>>>>>>> parent of b142a32... Transforming to new loader system...
     while True:
         appLaunch()
         print(' ')

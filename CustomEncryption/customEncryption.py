@@ -48,17 +48,17 @@ def decode(secret):
     return newString
 
 # For applications manager
-
-encodeOrDecode = input("Would you like to encode or decode a secret? ")
-if encodeOrDecode == "encode":
-    print(' ')
-    secret = input("Enter the secret to encode: ")
-    print(' ')
-    print("Encoded Secret:")
-    print(encode(secret))
-elif encodeOrDecode == "decode":
-    print(' ')
-    secret = input("Enter the secret to decode: ")
-    print(' ')
-    print("Decoded Secret:")
-    print(decode(secret))
+def amMainRun():
+    encodeOrDecode = input("Would you like to encode or decode a secret? ")
+    if encodeOrDecode == "encode":
+        print(' ')
+        secret = input("Enter the secret to encode: ")
+        print(' ')
+        print("Encoded Secret:")
+        print(encode(secret))
+    elif encodeOrDecode == "decode":
+        print(' ')
+        secret = input("Enter the secret to decode: ")
+        print(' ')
+        print("Decoded Secret:")
+        print(decode(secret))
